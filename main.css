@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url(https://i.kym-cdn.com/entries/icons/original/000/030/029/cover2.jpg);
+    background-size: cover;
+}
+main {
+    height: 100vh;
+    background-color: rgba(71, 113, 72, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10%;
+}
+button {
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 16px 8px;
+    background-color: #37c3ff;
+    border: none;
+}
+button.no-click {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: gray;
+}
+.top-container {
+    display: flex;
+    justify-content: flex-end;
+    display: none;
+}
+.deck-container {
+    position: relative;
+}
+.deck-container h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+.mid-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bottom-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+.dealer-container, .player-container {
+    display: flex;
+}
+.dealer-container .card, .player-container .card {
+    margin-right: 12px;
+    font-size: 24px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.dealer-container .card:first-child {
+    background-image: linear-gradient(45deg, #cc1414 25%, #ffffff 25%, #ffffff 50%, #cc1414 50%, #cc1414 75%, #ffffff 75%, #ffffff 100%);
+}
+.dealer-container .card.playing {
+    background: #fff;
+    color: #000 !important;
+}
+.card {
+    background-color: #fff;
+    height: 160px;
+    width: 125px;
+    border: 2px solid #000;
+    border-radius: 2px;
+    background-size: 28.28px 28.28px;
+}
+.card.deck {
+    background-image: linear-gradient(45deg, #cc1414 25%, #ffffff 25%, #ffffff 50%, #cc1414 50%, #cc1414 75%, #ffffff 75%, #ffffff 100%);
+}
+.dealer-container .card:first-child {
+    color: transparent;
+}
+.deck:not(:first-child) {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.deck:nth-child(2) {
+    transform: translate(5px, 5px);
+} 
+.deck:nth-child(3) {
+    transform: translate(10px, 10px);
+}
+.deck:nth-child(4) {
+    transform: translate(15px, 15px);
+}
+.btn-container #hit {
+    display: none;
+}
+.btn-container.playing #play {
+    display: none;
+}
+.btn-container.playing #hit {
+    display: inline-block;
+}
+.btn-container.no-cards button:not(:last-child) {
+    display: none !important;
+}
+.dealer-num, .player-num {
+    font-size: 32px;
+}
+.win-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.66);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+#win-msg {
+    font-size: 60px;
+    margin-bottom: 1em;
+    color: #fff;
+}
+.win-popup.active {
+    display: flex;
+}
